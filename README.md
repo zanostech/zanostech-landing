@@ -1,2 +1,2 @@
 # zanostech-landing
-This is zanostech landing page repository
+This is zanostech landing page repo
