@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/process", label: "Process" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
+  // { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
