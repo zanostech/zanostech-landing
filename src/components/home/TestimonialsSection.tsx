@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
         {testimonials.map((t, i) => (
           <div key={i} className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-8 flex flex-col justify-between">
             <div className="mb-8 relative">
-              <span className="absolute -top-4 -left-2 text-5xl text-[#22c55e]/20 font-serif">"</span>
+              <span className="absolute -top-4 -left-2 text-5xl text-[#22c55e]/20 font-serif">&quot;</span>
               <p className="text-white/80 text-sm leading-relaxed relative z-10">{t.quote}</p>
             </div>
             <div className="flex items-center gap-3">

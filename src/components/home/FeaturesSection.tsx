@@ -5,7 +5,7 @@ export default function FeaturesSection() {
     { title: "Quality over quantity", desc: "We take on fewer projects to ensure yours gets the attention and resources it deserves." },
     { title: "Security as standard", desc: "Enterprise-grade security practices baked into every line of code we ship." },
     { title: "Fast-paced delivery", desc: "We work in rapid sprints to deliver value fast without compromising on quality." },
-    { title: "Long-term partnership", desc: "We don't just ship and run. We're here to support and scale your product post-launch." },
+    { title: "Long-term partnership", desc: "We don&apos;t just ship and run. We&apos;re here to support and scale your product post-launch." },
   ];
 
   return (
