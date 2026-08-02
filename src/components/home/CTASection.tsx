@@ -19,7 +19,8 @@ export default function CTASection() {
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/contact"
-              className="bg-white text-black font-semibold px-6 py-3 rounded-full transition-all flex items-center gap-2 hover:bg-gray-100"
+              className="bg-white font-semibold px-6 py-3 rounded-full transition-all flex items-center gap-2 hover:bg-white/90"
+              style={{ color: "#0a0f0a" }}
             >
               Start a project
             </Link>

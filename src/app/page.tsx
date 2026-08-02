@@ -10,7 +10,6 @@ import VerticalsSection from "@/components/home/VerticalsSection";
 import PromisesSection from "@/components/home/PromisesSection";
 import FAQSection from "@/components/home/FAQSection";
 import CTASection from "@/components/home/CTASection";
-import HomeFooter from "@/components/home/HomeFooter";
 
 export default function Home() {
   return (
@@ -30,7 +29,6 @@ export default function Home() {
       <PromisesSection />
       <FAQSection />
       <CTASection />
-      <HomeFooter />
     </main>
   );
 }

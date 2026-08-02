@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
@@ -20,14 +21,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
-      <nav className="mx-auto max-w-[1280px] flex items-center justify-between relative">
+    <header className="fixed top-0 left-0 right-0 z-50 pt-4 sm:pt-6 w-full pointer-events-none">
+      <nav className="px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full flex items-center justify-between relative pointer-events-auto">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 text-white font-bold text-xl tracking-tight z-10">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-            <path d="M4 4h10l-6 8h6L6 20l12-8h-6l6-8H4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span>tech.</span>
+        <Link href="/" className="flex items-center z-10">
+          <img src="/zanostech-logo.png" alt="ZanosTech" className="h-8 w-auto" />
         </Link>
 
         {/* Center nav pills */}
@@ -83,7 +81,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 mt-4 px-4">
+        <div className="lg:hidden absolute top-full left-0 right-0 mt-4 px-4 pointer-events-auto">
           <div className="bg-[#0a0f0a]/95 backdrop-blur-xl border border-white/[0.06] rounded-2xl p-4 flex flex-col gap-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

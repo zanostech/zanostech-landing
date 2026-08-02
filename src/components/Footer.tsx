@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, MapPin, Mail, Phone } from "lucide-react";
 
 const footerLinks = {
@@ -12,17 +13,7 @@ const footerLinks = {
     { label: "UI/UX design", href: "/services" },
     { label: "Video editing", href: "/services" },
   ],
-  company: [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Work", href: "/work" },
-    { label: "Process", href: "/process" },
-    { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
-    { label: "Careers", href: "/contact" },
-    { label: "Admin", href: "/contact" },
-  ],
+
   resources: [
     { label: "Case studies", href: "/work" },
     { label: "Our process", href: "/process" },
@@ -34,72 +25,14 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="mt-0">
-      {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="mx-auto max-w-[1200px] bg-[#22c55e] rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
-            <div className="max-w-lg">
-              <p className="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-                Ready when you are
-              </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-                Let&apos;s build{" "}
-                <span className="text-white/80">something worth shipping.</span>
-              </h2>
-              <p className="text-white/80 text-sm sm:text-base mb-8 max-w-md">
-                We partner with founders, brands and product teams to design, engineer and grow digital products from our studio in Banasree, Dhaka.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-white text-[#0a0f0a] text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-white/90 transition-colors"
-                >
-                  Book a discovery call
-                  <ArrowUpRight size={14} strokeWidth={2.5} />
-                </Link>
-                <a
-                  href="mailto:hello@zanostech.com"
-                  className="inline-flex items-center gap-2 bg-white/15 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-white/20 transition-colors"
-                >
-                  hello@zanostech.com
-                  <ArrowUpRight size={14} strokeWidth={2.5} />
-                </a>
-              </div>
-            </div>
-            <div className="max-w-xs">
-              <p className="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-                The Signal — Monthly
-              </p>
-              <p className="text-white/80 text-sm mb-4">
-                One email a month. Field notes on product, design and building in Dhaka. No spam.
-              </p>
-              <div className="flex gap-2 mb-3">
-                <input
-                  type="email"
-                  placeholder="you@company.com"
-                  className="flex-1 bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-white/30"
-                />
-                <button className="bg-white text-[#0a0f0a] text-xs font-bold px-4 py-2.5 rounded-lg hover:bg-white/90 transition-colors uppercase tracking-wider">
-                  Subscribe
-                </button>
-              </div>
-              <p className="text-white/50 text-xs">1200+ founders and operators subscribed</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Links Section */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="mx-auto max-w-[1200px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
             {/* Brand */}
             <div className="lg:col-span-4">
-              <Link href="/" className="flex items-center gap-1 text-white font-bold text-xl tracking-tight mb-4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                  <path d="M4 4h10l-6 8h6L6 20l12-8h-6l6-8H4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <span>tech.</span>
+              <Link href="/" className="flex items-center mb-6">
+                <img src="/zanostech-logo.png" alt="ZanosTech" className="h-8 w-auto" />
               </Link>
               <p className="text-white/50 text-sm mb-4 max-w-xs">
                 A senior digital studio designing and engineering brands, products and platforms out of Dhaka since 2019.
@@ -125,19 +58,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Company */}
-            <div className="lg:col-span-2">
-              <p className="text-[#22c55e] text-xs font-semibold tracking-[0.15em] uppercase mb-4">Company</p>
-              <ul className="space-y-2.5">
-                {footerLinks.company.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} className="text-white/50 text-sm hover:text-white transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
 
             {/* Resources */}
             <div className="lg:col-span-2">
