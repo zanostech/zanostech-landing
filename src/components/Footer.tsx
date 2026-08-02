@@ -26,8 +26,8 @@ export default function Footer() {
   return (
     <footer className="mt-0">
       {/* Links Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="mx-auto max-w-[1200px]">
+      <section className="pb-12">
+        <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
             {/* Brand */}
             <div className="lg:col-span-4">
@@ -133,8 +133,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/[0.06] px-4 sm:px-6 lg:px-8 py-6">
-        <div className="mx-auto max-w-[1200px] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="border-t border-white/[0.06] py-6">
+        <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-4 text-xs text-white/40">
             <span>&copy; 2026 ZanosTech Ltd. All rights reserved.</span>
             <Link href="#" className="hover:text-white/60 transition-colors">Privacy</Link>

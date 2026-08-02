@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function HomeFooter() {
   return (
-    <footer className="w-full mt-20 pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t border-white/[0.05] relative z-10">
-      <div className="max-w-[1280px] mx-auto">
+    <footer className="w-full mt-20 pt-16 pb-8 border-t border-white/[0.05] relative z-10">
+      <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="max-w-md">
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">

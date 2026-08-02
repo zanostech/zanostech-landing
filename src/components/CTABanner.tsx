@@ -3,8 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CTABanner() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
-      <div className="mx-auto max-w-[1200px]">
+    <section className="pb-16 sm:pb-24">
+      <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
         <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16">
           <div className="max-w-xl">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">

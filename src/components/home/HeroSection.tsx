@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full flex flex-col items-start mt-10">
+    <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 container mx-auto w-full flex flex-col items-start mt-10">
       <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-[900px] leading-[1.1]">
         We design <span className="text-[#22c55e]">calm</span>,<br />
         engineer <span className="text-[#22c55e]">clarity</span>, and<br />

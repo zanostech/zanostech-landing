@@ -15,7 +15,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full">
+    <section className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
       <div className="mb-10">
         <h2 className="text-3xl md:text-4xl font-semibold text-white">
           Things founders <span className="text-[#22c55e]">ask first.</span>

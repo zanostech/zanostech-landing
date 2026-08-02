@@ -10,7 +10,7 @@ export default function SelectedWork() {
   ];
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full">
+    <section className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
       <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <h2 className="text-3xl md:text-4xl font-semibold text-white">

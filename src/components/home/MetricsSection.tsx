@@ -1,6 +1,6 @@
 export default function MetricsSection() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full">
+    <section className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
       <div className="bg-[#22c55e]/[0.03] border border-[#22c55e]/10 rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row justify-between items-center gap-10">
         <div className="lg:max-w-md w-full">
           <h2 className="text-2xl md:text-3xl font-semibold text-white leading-snug">

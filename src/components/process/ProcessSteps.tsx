@@ -43,8 +43,8 @@ const steps = [
 
 export default function ProcessSteps() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-white/[0.06]">
-      <div className="mx-auto max-w-[1200px] space-y-6">
+    <section className="py-16 sm:py-24 border-t border-white/[0.06]">
+      <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full space-y-6">
         {steps.map((step) => (
           <div
             key={step.num}

@@ -1,7 +1,7 @@
 export default function OurStory() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-white/[0.06]">
-      <div className="mx-auto max-w-[1200px]">
+    <section className="py-16 sm:py-24 border-t border-white/[0.06]">
+      <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
         <p className="text-[#22c55e] text-xs font-semibold tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
           <span className="w-6 h-px bg-[#22c55e]" />
           Our Story

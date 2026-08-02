@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-4 sm:pt-6 w-full pointer-events-none">
-      <nav className="px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full flex items-center justify-between relative pointer-events-auto">
+      <nav className="px-4 sm:px-6 lg:px-8 container mx-auto w-full flex items-center justify-between relative pointer-events-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center z-10">
           <img src="/zanostech-logo.png" alt="ZanosTech" className="h-8 w-auto" />

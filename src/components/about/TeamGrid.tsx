@@ -13,8 +13,8 @@ const team = [
 
 export default function TeamGrid() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-white/[0.06]">
-      <div className="mx-auto max-w-[1200px]">
+    <section className="py-16 sm:py-24 border-t border-white/[0.06]">
+      <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
         <SectionHeader
           tag="The Team"
           title={<>People who <span className="text-[#22c55e]">actually</span> do the work.</>}

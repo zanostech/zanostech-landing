@@ -7,7 +7,7 @@ export default function StatsBar() {
   ];
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 max-w-[1280px] mx-auto w-full">
+    <section className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">
       <div className="border-t border-b border-white/[0.08] py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
