@@ -17,7 +17,8 @@ export default function CTABanner() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-[#0a0f0a] text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-white/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-white/90 transition-colors"
+                style={{ color: "#0a0f0a" }}
               >
                 Start a project
                 <ArrowUpRight size={14} strokeWidth={2.5} />

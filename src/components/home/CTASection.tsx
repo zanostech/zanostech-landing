@@ -7,7 +7,7 @@ export default function CTASection() {
       <div className="rounded-3xl bg-gradient-to-br from-[#16a34a]/20 to-transparent border border-[#22c55e]/30 p-10 md:p-16 relative overflow-hidden backdrop-blur-md">
         {/* Glow effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] h-[600px] bg-[#22c55e]/20 rounded-full blur-[100px] -z-10" />
-        
+
         <div className="relative z-10 max-w-xl">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Have a project in mind?<br />
