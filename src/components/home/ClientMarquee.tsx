@@ -1,6 +1,15 @@
-const clients = ["Nirvaan", "Rickshaw", "Orbit", "Chalo", "Sundori", "Kori", "Meghna", "Boi", "Panth"];
+import { getClients } from "@/lib/api";
 
-export default function ClientMarquee() {
+const fallbackClients = ["Nirvaan", "Rickshaw", "Orbit", "Chalo", "Sundori", "Kori", "Meghna", "Boi", "Panth"];
+
+export default async function ClientMarquee() {
+  const dynamicData = await getClients();
+  
+  let clients = fallbackClients;
+  if (dynamicData && dynamicData.length > 0) {
+    clients = dynamicData.map((d: any) => d.name);
+  }
+
   return (
     <section className="border-t border-b border-white/[0.06] py-5 overflow-hidden">
       <div className="flex animate-marquee whitespace-nowrap">

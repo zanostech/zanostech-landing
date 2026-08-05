@@ -1,13 +1,25 @@
 import { ArrowUpRight } from "lucide-react";
+import { getProjects } from "@/lib/api";
 
-export default function SelectedWork() {
-  const projects = [
-    { name: "Headspace", type: "Health & Wellness", span: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2 h-[400px]" },
-    { name: "Dribbble", type: "Design Platform", span: "col-span-1 h-[190px]" },
-    { name: "Zero Security", type: "Cybersecurity", span: "col-span-1 h-[190px]" },
-    { name: "Virtual Training", type: "EdTech", span: "col-span-1 md:col-span-2 lg:col-span-2 h-[190px]" },
-    { name: "Data AI", type: "Enterprise", span: "col-span-1 md:col-span-3 h-[300px]" }
-  ];
+const fallbackProjects = [
+  { name: "Headspace", type: "Health & Wellness", span: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2 h-[400px]" },
+  { name: "Dribbble", type: "Design Platform", span: "col-span-1 h-[190px]" },
+  { name: "Zero Security", type: "Cybersecurity", span: "col-span-1 h-[190px]" },
+  { name: "Virtual Training", type: "EdTech", span: "col-span-1 md:col-span-2 lg:col-span-2 h-[190px]" },
+  { name: "Data AI", type: "Enterprise", span: "col-span-1 md:col-span-3 h-[300px]" }
+];
+
+export default async function SelectedWork() {
+  const dynamicData = await getProjects();
+  
+  let projects = fallbackProjects;
+  if (dynamicData && dynamicData.length > 0) {
+    projects = dynamicData.map((d: any, i: number) => ({
+      name: d.title,
+      type: d.projectType?.[0] || "Featured",
+      span: fallbackProjects[i % fallbackProjects.length].span,
+    })).slice(0, 5); // limit to 5 to match layout
+  }
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">

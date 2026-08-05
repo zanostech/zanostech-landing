@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 export default function PageHero({ tag, title, description, children, rightContent }: PageHeroProps) {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] pt-32 sm:pt-40 pb-20 sm:pb-24 flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-[50vh] lg:min-h-[calc(100vh-80px)] pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 flex flex-col justify-center overflow-hidden">
       {/* Subtle Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_10%,transparent_100%)] pointer-events-none -z-10" />
       
@@ -22,7 +22,7 @@ export default function PageHero({ tag, title, description, children, rightConte
             <p className="text-[#22c55e] text-xs font-semibold tracking-[0.2em] uppercase mb-4">
               {tag}
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 max-w-3xl">
               {title}
             </h1>
             <p className="text-white/50 text-sm sm:text-base max-w-lg">

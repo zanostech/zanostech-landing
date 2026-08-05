@@ -3,7 +3,7 @@ import { ArrowRight, Code2, Layout, Zap } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-80px)] pt-32 pb-24 px-4 sm:px-6 lg:px-8 container mx-auto w-full flex flex-col justify-center">
+    <section className="relative min-h-[60vh] lg:min-h-[calc(100vh-80px)] pt-24 lg:pt-32 pb-12 lg:pb-24 px-4 sm:px-6 lg:px-8 container mx-auto w-full flex flex-col justify-center">
       
       {/* Subtle Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none -z-10" />
@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
         {/* Left Content */}
         <div className="lg:col-span-7 flex flex-col items-start z-10 animate-fade-up">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-[900px] leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white max-w-[900px] leading-[1.1]">
             We design <span className="text-[#22c55e]">calm</span>,<br />
             engineer <span className="text-[#22c55e]">clarity</span>, and<br />
             ship products worth<br />

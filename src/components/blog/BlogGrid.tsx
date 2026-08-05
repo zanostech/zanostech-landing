@@ -1,6 +1,7 @@
 import BlogPostCard from "./BlogPostCard";
+import { getPosts } from "@/lib/api";
 
-const posts = [
+const fallbackPosts = [
   {
     tag: "CASE STUDY",
     date: "Jul 28, 2026",
@@ -24,7 +25,20 @@ const posts = [
   },
 ];
 
-export default function BlogGrid() {
+export default async function BlogGrid() {
+  const dynamicData = await getPosts();
+  
+  let posts = fallbackPosts;
+  if (dynamicData && dynamicData.length > 0) {
+    posts = dynamicData.map((d: any) => ({
+      tag: d.tag || "ARTICLE",
+      date: new Date(d.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+      author: d.author || "ZANOSTECH",
+      title: d.title,
+      desc: d.excerpt || "",
+    }));
+  }
+
   return (
     <section className="py-16 sm:py-24 border-t border-white/[0.06]">
       <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">

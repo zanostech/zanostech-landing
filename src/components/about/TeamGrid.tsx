@@ -1,6 +1,7 @@
 import SectionHeader from "@/components/SectionHeader";
+import { getTeamMembers } from "@/lib/api";
 
-const team = [
+const fallbackTeam = [
   { initials: "ZR", name: "Zahin Rahman", role: "Founder · Design Director" },
   { initials: "NA", name: "Nazia Ahsan", role: "Head of Engineering" },
   { initials: "RI", name: "Rafid Islam", role: "Lead Product Designer" },
@@ -11,7 +12,18 @@ const team = [
   { initials: "RH", name: "Rakib Hossain", role: "Backend Engineer" },
 ];
 
-export default function TeamGrid() {
+export default async function TeamGrid() {
+  const dynamicData = await getTeamMembers();
+  
+  let team = fallbackTeam;
+  if (dynamicData && dynamicData.length > 0) {
+    team = dynamicData.map((d: any) => ({
+      initials: d.name.split(" ").map((n: string) => n[0]).join("").substring(0, 2).toUpperCase(),
+      name: d.name,
+      role: d.designation,
+    }));
+  }
+
   return (
     <section className="py-16 sm:py-24 border-t border-white/[0.06]">
       <div className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">

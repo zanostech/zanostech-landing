@@ -1,32 +1,43 @@
 import { ArrowUpRight } from "lucide-react";
+import { getServices } from "@/lib/api";
 
-export default function ServicesGrid() {
-  const services = [
-    {
-      title: "Strategy & direction",
-      desc: "User research, market analysis, product strategy.",
-    },
-    {
-      title: "Branding & identity",
-      desc: "Visual identity, brand guidelines, messaging.",
-    },
-    {
-      title: "UI/UX design",
-      desc: "Wireframing, prototyping, user testing, design systems.",
-    },
-    {
-      title: "Webflow",
-      desc: "Custom development, CMS setup, animations.",
-    },
-    {
-      title: "SEO & content",
-      desc: "Technical SEO, content strategy, copywriting.",
-    },
-    {
-      title: "Web3 & crypto",
-      desc: "DApps, smart contracts, tokenomics.",
-    },
-  ];
+const fallbackServices = [
+  {
+    title: "Strategy & direction",
+    desc: "User research, market analysis, product strategy.",
+  },
+  {
+    title: "Branding & identity",
+    desc: "Visual identity, brand guidelines, messaging.",
+  },
+  {
+    title: "UI/UX design",
+    desc: "Wireframing, prototyping, user testing, design systems.",
+  },
+  {
+    title: "Webflow",
+    desc: "Custom development, CMS setup, animations.",
+  },
+  {
+    title: "SEO & content",
+    desc: "Technical SEO, content strategy, copywriting.",
+  },
+  {
+    title: "Web3 & crypto",
+    desc: "DApps, smart contracts, tokenomics.",
+  },
+];
+
+export default async function ServicesGrid() {
+  const dynamicData = await getServices();
+  
+  let services = fallbackServices;
+  if (dynamicData && dynamicData.length > 0) {
+    services = dynamicData.map((d) => ({
+      title: d.title,
+      desc: d.description || "",
+    }));
+  }
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">

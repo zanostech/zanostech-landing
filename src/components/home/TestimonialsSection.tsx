@@ -1,26 +1,40 @@
 import { Star } from "lucide-react";
+import { getReviews } from "@/lib/api";
 
-export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      quote: "Zanos delivered beyond our expectations. Their attention to detail and momentum-driven approach helped us launch 2 months ahead of schedule.",
-      name: "Sarah Jenkins",
-      role: "CEO at TechFlow",
-      initial: "S"
-    },
-    {
-      quote: "The clarity they brought to our complex engineering problems was exactly what we needed. Highly recommended for any ambitious startup.",
-      name: "Marcus Chen",
-      role: "CTO at Innovate",
-      initial: "M"
-    },
-    {
-      quote: "Our conversion rates doubled after the redesign. They truly understand how to design calm and engineer clarity.",
-      name: "Emily Watson",
-      role: "VP Product at Scale",
-      initial: "E"
-    }
-  ];
+const fallbackTestimonials = [
+  {
+    quote: "Zanos delivered beyond our expectations. Their attention to detail and momentum-driven approach helped us launch 2 months ahead of schedule.",
+    name: "Sarah Jenkins",
+    role: "CEO at TechFlow",
+    initial: "S"
+  },
+  {
+    quote: "The clarity they brought to our complex engineering problems was exactly what we needed. Highly recommended for any ambitious startup.",
+    name: "Marcus Chen",
+    role: "CTO at Innovate",
+    initial: "M"
+  },
+  {
+    quote: "Our conversion rates doubled after the redesign. They truly understand how to design calm and engineer clarity.",
+    name: "Emily Watson",
+    role: "VP Product at Scale",
+    initial: "E"
+  }
+];
+
+export default async function TestimonialsSection() {
+  const dynamicData = await getReviews();
+  
+  let testimonials = fallbackTestimonials;
+  if (dynamicData && dynamicData.length > 0) {
+    testimonials = dynamicData.map((d: any) => ({
+      quote: d.reviewText,
+      name: d.clientName,
+      role: `${d.designation}${d.company ? ` at ${d.company}` : ''}`,
+      initial: d.clientName.charAt(0)
+    }));
+  }
+
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 container mx-auto w-full">

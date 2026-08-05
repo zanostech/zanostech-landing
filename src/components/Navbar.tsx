@@ -28,21 +28,26 @@ export default function Navbar() {
           <img src="/zanostech-logo.png" alt="ZanosTech" className="h-8 w-auto" />
         </Link>
 
-        {/* Center nav pills */}
-        <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-1 bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] rounded-full px-2 py-1.5">
+        {/* Center nav links */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                className={`relative py-1 text-sm font-medium transition-all duration-200 whitespace-nowrap group ${
                   isActive
-                    ? "bg-[#22c55e] text-white"
-                    : "text-white/70 hover:text-white hover:bg-white/5"
+                    ? "text-white"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {link.label}
+                <span 
+                  className={`absolute -bottom-1 left-0 h-[2px] bg-[#22c55e] transition-all duration-300 ${
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
               </Link>
             );
           })}
@@ -82,7 +87,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 mt-4 px-4 pointer-events-auto">
-          <div className="bg-[#0a0f0a]/95 backdrop-blur-xl border border-white/[0.06] rounded-2xl p-4 flex flex-col gap-2">
+          <div className="bg-[#0a0f0a]/95 backdrop-blur-xl border border-white/[0.06] rounded-2xl p-6 flex flex-col gap-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -90,23 +95,29 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+                  className={`relative w-fit py-1 text-base font-medium transition-all duration-200 group ${
                     isActive
-                      ? "bg-[#22c55e] text-white"
-                      : "text-white/70 hover:text-white hover:bg-white/5"
+                      ? "text-white"
+                      : "text-white/70 hover:text-white"
                   }`}
                 >
                   {link.label}
+                  <span 
+                    className={`absolute -bottom-1 left-0 h-[2px] bg-[#22c55e] transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
                 </Link>
               );
             })}
             <Link
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-2 flex items-center justify-center gap-2 bg-[#22c55e] text-white text-base font-semibold px-4 py-3 rounded-xl transition-colors"
+              className="mt-4 flex items-center gap-2 text-white text-base font-medium transition-all duration-200 w-fit group relative py-1"
             >
               Start a project
               <ArrowUpRight size={16} strokeWidth={2.5} />
+              <span className="absolute -bottom-1 left-0 h-[2px] bg-[#22c55e] transition-all duration-300 w-0 group-hover:w-full" />
             </Link>
           </div>
         </div>
